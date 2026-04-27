@@ -3,27 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>KK9 Bot | تبادل النجوم إلى TON</title>
-    <meta name="description" content="تحويل نجوم تيليجرام إلى عملة TON بشكل فوري وآمن. البوت يدعم الشحن التلقائي وإحصائيات فورية.">
+    <title>⭐️ KK9 Bot – تبادل النجوم إلى TON</title>
+    <meta name="description" content="تحويل نجوم تيليجرام إلى TON بشكل فوري وآمن.">
     <meta name="theme-color" content="#0a2e5a">
-    <!-- Font Awesome 6 (مجاني) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, 'Cairo', sans-serif;
+            font-family: 'Segoe UI', system-ui, 'Cairo', sans-serif;
             background: linear-gradient(145deg, #eef5ff 0%, #d9e9ff 100%);
             color: #1a2c3e;
             padding: 20px;
             direction: rtl;
         }
-
-        /* Dark mode support (حسب إعدادات النظام) */
         @media (prefers-color-scheme: dark) {
             body {
                 background: linear-gradient(145deg, #0a1622 0%, #111e2c 100%);
@@ -34,31 +25,16 @@
                 backdrop-filter: blur(10px);
                 border-color: rgba(100, 180, 250, 0.3);
             }
-            .instruction-card {
-                background: #0f1a28;
-            }
-            footer {
-                border-top-color: #1e3a5f;
-            }
+            footer { border-top-color: #1e3a5f; }
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Header */
+        .container { max-width: 1200px; margin: 0 auto; }
         .header {
             text-align: center;
             margin-bottom: 40px;
-            padding: 30px 20px 20px;
+            padding: 30px 20px;
             background: rgba(255,255,255,0.2);
             border-radius: 80px 40px 80px 40px;
             backdrop-filter: blur(4px);
-        }
-        .logo {
-            font-size: 4.5rem;
-            margin-bottom: 15px;
         }
         h1 {
             font-size: 2.3rem;
@@ -66,25 +42,15 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            display: inline-block;
             margin-bottom: 10px;
         }
-        .tagline {
-            font-size: 1.2rem;
-            color: #3e6b92;
-            font-weight: 500;
-        }
-        @media (prefers-color-scheme: dark) {
-            .tagline { color: #95bcf0; }
-        }
-
-        /* Stats bar */
+        .tagline { font-size: 1.2rem; color: #3e6b92; font-weight: 500; }
         .stats-bar {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            margin: 30px 0 20px;
+            margin: 30px 0;
         }
         .stat-card {
             background: rgba(255,255,255,0.5);
@@ -95,18 +61,7 @@
             border: 1px solid rgba(46,158,255,0.5);
             flex: 1 1 180px;
         }
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #2e9eff;
-        }
-        .stat-label {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Grids */
+        .stat-number { font-size: 2rem; font-weight: bold; color: #2e9eff; }
         .features-grid, .steps-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -119,24 +74,14 @@
             padding: 25px 20px;
             border-radius: 48px 24px 48px 24px;
             border: 1px solid rgba(46,158,255,0.4);
-            transition: all 0.25s ease;
+            transition: 0.25s;
         }
         .feature-card:hover, .step-card:hover {
             transform: translateY(-5px);
             border-color: #2e9eff;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
-        .feature-icon {
-            font-size: 2.8rem;
-            color: #2e9eff;
-            margin-bottom: 15px;
-        }
-        h3 {
-            margin: 15px 0 10px;
-            font-size: 1.5rem;
-        }
-
-        /* Instructions section (خطوات تفصيلية) */
+        .feature-icon { font-size: 2.8rem; margin-bottom: 15px; }
+        h3 { margin: 15px 0 10px; font-size: 1.5rem; }
         .instructions {
             background: rgba(0,20,40,0.5);
             border-radius: 60px 30px 60px 30px;
@@ -150,14 +95,7 @@
             margin: 20px 0;
             border-right: 6px solid #2e9eff;
         }
-        .step-title {
-            font-size: 1.4rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 10px;
-        }
+        .step-title { font-size: 1.4rem; font-weight: bold; display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
         .step-number {
             background: #2e9eff;
             width: 40px;
@@ -169,8 +107,6 @@
             font-weight: bold;
             font-size: 1.3rem;
         }
-
-        /* Pricing table */
         .pricing {
             background: linear-gradient(95deg, #0b2d4e, #124072);
             border-radius: 48px;
@@ -179,16 +115,7 @@
             margin: 40px 0;
             text-align: center;
         }
-        .price-value {
-            font-size: 2.5rem;
-            font-weight: bold;
-        }
-        .price-note {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        /* Button bot */
+        .price-value { font-size: 2.5rem; font-weight: bold; }
         .bot-button {
             display: inline-flex;
             align-items: center;
@@ -203,11 +130,7 @@
             transition: 0.2s;
             margin: 20px 0;
         }
-        .bot-button:hover {
-            background: #0f6bc0;
-            transform: scale(1.02);
-        }
-
+        .bot-button:hover { background: #0f6bc0; transform: scale(1.02); }
         footer {
             text-align: center;
             margin-top: 60px;
@@ -215,141 +138,120 @@
             border-top: 1px solid #ccc;
             font-size: 0.8rem;
         }
-
         @media (max-width: 650px) {
             h1 { font-size: 1.8rem; }
             .stat-number { font-size: 1.5rem; }
-            .feature-card, .step-card { padding: 20px; }
         }
     </style>
 </head>
 <body>
 <div class="container">
     <div class="header">
-        <div class="logo">⭐️🔄💎</div>
+        <div style="font-size: 4rem;">
+            <tg-emoji emoji-id="5433724595465134946">🌟</tg-emoji>
+            <tg-emoji emoji-id="5321182330457462213">💎</tg-emoji>
+            <tg-emoji emoji-id="5434102062960910681">🚀</tg-emoji>
+        </div>
         <h1>KK9 Bot – تبادل النجوم إلى TON</h1>
-        <div class="tagline">أسرع وأكثر الطرق أماناً لتحويل نجوم تليجرام إلى عملة TON</div>
+        <div class="tagline">
+            <tg-emoji emoji-id="5463178643662476491">✅</tg-emoji> أسرع وأكثر الطرق أماناً
+            <tg-emoji emoji-id="5463118531300200959">🎉</tg-emoji>
+        </div>
     </div>
 
-    <!-- بعض الإحصائيات التقديرية (للتجميل) -->
     <div class="stats-bar">
         <div class="stat-card">
             <div class="stat-number">100+</div>
-            <div class="stat-label">عملية ناجحة</div>
+            <div class="stat-label"><tg-emoji emoji-id="5463178643662476491">✅</tg-emoji> عملية ناجحة</div>
         </div>
         <div class="stat-card">
-            <div class="stat-number">✨ فوري</div>
+            <div class="stat-number"><tg-emoji emoji-id="5434102062960910681">🚀</tg-emoji> فوري</div>
             <div class="stat-label">تحويل مباشر</div>
         </div>
         <div class="stat-card">
-            <div class="stat-number">🔒 آمن</div>
-            <div class="stat-label">بضمان تليجرام</div>
+            <div class="stat-number"><tg-emoji emoji-id="5309961286015035654">💰</tg-emoji> آمن</div>
+            <div class="stat-label">بضمان ودقة عالية</div>
         </div>
     </div>
 
-    <!-- قسم المميزات -->
     <div class="features-grid">
         <div class="feature-card">
-            <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+            <div class="feature-icon"><tg-emoji emoji-id="5463054287179385236">⚡</tg-emoji></div>
             <h3>تحويل فوري</h3>
             <p>بعد إتمام الدفع، تُرسل TON مباشرة إلى محفظتك دون تأخير.</p>
         </div>
         <div class="feature-card">
-            <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="feature-icon"><tg-emoji emoji-id="5462883579409241725">🔒</tg-emoji></div>
             <h3>آمن وموثوق</h3>
             <p>يتم التحقق من كل معاملة عبر نظام دفع تليجرام الرسمي.</p>
         </div>
         <div class="feature-card">
-            <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="feature-icon"><tg-emoji emoji-id="5309845459336990916">📊</tg-emoji></div>
             <h3>سعر تنافسي</h3>
-            <p>سعر ثابت: 1000 نجمة = 10 USDT (أي 0.01 دولار لكل نجمة).</p>
+            <p>سعر ثابت: 1000 نجمة = 10 USDT (0.01 دولار لكل نجمة).</p>
         </div>
         <div class="feature-card">
-            <div class="feature-icon"><i class="fas fa-headset"></i></div>
+            <div class="feature-icon"><tg-emoji emoji-id="5433724595465134946">🎧</tg-emoji></div>
             <h3>دعم 24/7</h3>
-            <p>فريق الدعم متواجد لحل أي استفسار أو مشكلة تقنية.</p>
+            <p>فريق الدعم متواجد لحل أي استفسار.</p>
         </div>
     </div>
 
-    <!-- جدول الأسعار والتوضيح -->
     <div class="pricing">
-        <h2 style="color:white;">💎 سعر الصرف الحالي 💎</h2>
-        <div class="price-value">1000 ⭐️ = 10 USDT</div>
+        <h2 style="color:white;"><tg-emoji emoji-id="5321182330457462213">💎</tg-emoji> سعر الصرف الحالي <tg-emoji emoji-id="5321182330457462213">💎</tg-emoji></h2>
+        <div class="price-value">1000 <tg-emoji emoji-id="5433724595465134946">⭐️</tg-emoji> = 10 USDT</div>
         <div style="font-size:1.3rem; margin:15px 0;">≈ <span id="tonEstimate">...</span> TON</div>
         <div class="price-note">يتم تحويل القيمة إلى TON بسعر السوق الفعلي وقت المعاملة.</div>
     </div>
 
-    <!-- تعليمات الاستخدام (الأساسية) -->
     <div class="instructions">
-        <h2><i class="fas fa-clipboard-list"></i> تعليمات الاستخدام – خطوات بسيطة</h2>
+        <h2><tg-emoji emoji-id="5465354117612343944">📋</tg-emoji> تعليمات الاستخدام – خطوات بسيطة</h2>
         <div class="instruction-card">
-            <div class="step-title">
-                <span class="step-number">1</span> 
-                <span>بدء المحادثة مع البوت</span>
-            </div>
+            <div class="step-title"><span class="step-number">1</span> <span>بدء المحادثة مع البوت</span></div>
             <p>اضغط على زر <strong>بدء /start</strong> أو اكتب الأمر <code>/start</code> في محادثة البوت <strong>@kk9bot</strong>.</p>
         </div>
         <div class="instruction-card">
-            <div class="step-title">
-                <span class="step-number">2</span>
-                <span>إدخال عدد النجوم</span>
-            </div>
-            <p>سيطلب منك البوت إدخال عدد النجوم التي تريد بيعها (أي عدد صحيح، مثال 100).</p>
+            <div class="step-title"><span class="step-number">2</span> <span>إدخال عدد النجوم</span></div>
+            <p>سيطلب منك البوت إدخال عدد النجوم التي تريد بيعها (عدد صحيح، مثال 100).</p>
         </div>
         <div class="instruction-card">
-            <div class="step-title">
-                <span class="step-number">3</span>
-                <span>إرسال عنوان محفظة TON</span>
-            </div>
+            <div class="step-title"><span class="step-number">3</span> <span>إرسال عنوان محفظة TON</span></div>
             <p>قم بلصق عنوان محفظتك بصيغة TON (يبدأ بـ EQ أو UQ) كما تظهر في محفظتك.</p>
         </div>
         <div class="instruction-card">
-            <div class="step-title">
-                <span class="step-number">4</span>
-                <span>تأكيد عملية الدفع</span>
-            </div>
-            <p>اضغط على زر "تأكيد" لتظهر فاتورة الدفع بنظام Stars Telegram. قم بدفع المبلغ المطلوب بضغطة واحدة.</p>
+            <div class="step-title"><span class="step-number">4</span> <span>تأكيد عملية الدفع</span></div>
+            <p>اضغط على زر <strong>تأكيد</strong> لتظهر فاتورة الدفع بنظام Stars Telegram. قم بدفع المبلغ بضغطة واحدة.</p>
         </div>
         <div class="instruction-card">
-            <div class="step-title">
-                <span class="step-number">5</span>
-                <span>استلام TON فوراً</span>
-            </div>
-            <p>بعد إتمام الدفع سيتم تحويل TON إلى محفظتك بشكل تلقائي خلال دقائق. يمكنك متابعة الحالة مع البوت.</p>
+            <div class="step-title"><span class="step-number">5</span> <span>استلام TON فوراً</span></div>
+            <p>بعد إتمام الدفع سيتم تحويل TON إلى محفظتك بشكل تلقائي خلال دقائق.</p>
         </div>
         <div class="instruction-card">
-            <div class="step-title">
-                <span class="step-number">📌</span>
-                <span>ملاحظات هامة</span>
-            </div>
-            <p>• يقتطع تليجرام عمولة 15% ويحجز المبلغ لمدة 21 يومًا قبل الإفراج، لكن البوت يرسل TON فوراً بخصم هذه العمولة.<br>
-            • الحد الأدنى للتحويل هو 50 نجمة.<br>
-            • لابد أن يكون حساب تليجرام الخاص بك بريميوم (اختياري إعدادات البوت).</p>
+            <div class="step-title"><tg-emoji emoji-id="5465665644475223437">⚠️</tg-emoji> <span>ملاحظات هامة</span></div>
+            <p>• يقتطع تليجرام عمولة 15% ويحجز المبلغ لمدة 21 يومًا، لكن البوت يرسل TON فوراً بخصم هذه العمولة.<br>• الحد الأدنى للتحويل هو 50 نجمة.<br>• يفضل أن يكون حساب تليجرام بريميوم (يُمكن تغيير الإعداد من لوحة المشرف).</p>
         </div>
     </div>
 
-    <!-- دعوة لفتح التطبيق المصغر (إضافة جاذبية) -->
     <div style="text-align: center;">
         <a href="https://t.me/kk9bot" class="bot-button" target="_blank">
-            <i class="fab fa-telegram"></i> افتح البوت الآن
+            <tg-emoji emoji-id="5433724595465134946">🚀</tg-emoji> افتح البوت الآن <tg-emoji emoji-id="5434102062960910681">🚀</tg-emoji>
         </a>
         <p style="margin: 20px 0;">يمكنك أيضاً استخدام التطبيق المصغر من داخل القائمة الرئيسية للبوت.</p>
     </div>
 
     <footer>
-        © 2026 KK9 Bot – تصميم حديث ومتجاوب | جميع الحقوق محفوظة<br>
+        © 2026 KK9 Bot – max <br>
         تطوير: <strong>@hssss</strong> | اسم المطور: <strong>max</strong>
+        <br><tg-emoji emoji-id="5433724595465134946">⭐️</tg-emoji> <tg-emoji emoji-id="5321182330457462213">💎</tg-emoji> <tg-emoji emoji-id="5434102062960910681">🚀</tg-emoji>
     </footer>
 </div>
-
 <script>
-    // جلب سعر TON التقريبي (اختياري لإظهار التقدير)
+    // جلب سعر TON التقريبي من Binance
     async function fetchTonPrice() {
         try {
             const res = await fetch('https://api.binance.com/api/v3/ticker/price?symbol=TONUSDT');
             const data = await res.json();
             const price = parseFloat(data.price);
-            // 1000 نجمة = 10 دولار -> 10 دولار تعطي 10/price TON
             const estimatedTon = (10 / price).toFixed(4);
             document.getElementById('tonEstimate').innerText = `${estimatedTon} TON`;
         } catch(e) {
