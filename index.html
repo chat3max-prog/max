@@ -1,1 +1,136 @@
-
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>تبادل النجوم - التطبيق المصغر</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Cairo', sans-serif;
+            background: linear-gradient(145deg, #0B1820 0%, #0A1118 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            direction: rtl;
+        }
+        .card {
+            background: rgba(22, 34, 48, 0.85);
+            backdrop-filter: blur(12px);
+            border-radius: 64px 32px 64px 32px;
+            padding: 2rem 1.8rem;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,215,0,0.3);
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+        h1 {
+            font-size: 2.4rem;
+            background: linear-gradient(135deg, #FFD966, #FFB347);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .stars-badge {
+            background: #2A3B4C;
+            border-radius: 100px;
+            padding: 8px 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+            font-weight: 500;
+            color: #FFE484;
+            border: 1px solid #FFD96640;
+        }
+        .info-text {
+            color: #CBD5E1;
+            line-height: 1.5;
+            margin: 20px 0;
+            font-size: 1rem;
+        }
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin: 24px 0;
+        }
+        .feature {
+            background: #1E2A36;
+            border-radius: 40px;
+            padding: 6px 14px;
+            font-size: 0.8rem;
+            color: #FFE9B6;
+            font-weight: 500;
+        }
+        button {
+            background: linear-gradient(95deg, #F5B041, #FF8C00);
+            border: none;
+            padding: 14px 28px;
+            border-radius: 60px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #0F212E;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            margin-top: 12px;
+            transition: transform 0.1s ease;
+            box-shadow: 0 6px 0 #B45F1B;
+            width: auto;
+        }
+        button:active { transform: translateY(2px); box-shadow: 0 3px 0 #B45F1B; }
+        .footer-note {
+            margin-top: 28px;
+            font-size: 0.7rem;
+            color: #6C86A3;
+            border-top: 1px dashed #2C4152;
+            padding-top: 16px;
+        }
+    </style>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+<div class="card">
+    <h1>⭐️ تبادل النجوم 🌟</h1>
+    <div class="stars-badge">🌟 مبادلة فورية وآمنة 🌟</div>
+    <div class="info-text">
+        <strong>✨ مرحباً بك في التطبيق المصغر الرسمي ✨</strong><br>
+        يمكنك متابعة رصيدك وطلباتك بسهولة — كل شيء مصمم ليناسب هاتفك!
+    </div>
+    <div class="feature-grid">
+        <span class="feature">⚡ تحويل فوري</span>
+        <span class="feature">🔒 حماية كاملة</span>
+        <span class="feature">📊 إحصائيات حية</span>
+        <span class="feature">🎁 مكافآت دورية</span>
+    </div>
+    <button onclick="closeApp()">✨ إغلاق التطبيق ✨</button>
+    <div class="footer-note">
+        🚀 باستخدام هذا التطبيق فإنك توافق على سياسة الخدمة<br>
+        <span style="color:#FFD966;">@stars_exchange_bot</span>
+    </div>
+</div>
+<script>
+    function closeApp() {
+        if (window.Telegram && Telegram.WebApp) {
+            Telegram.WebApp.close();
+        } else {
+            alert("يمكنك إغلاق هذه النافذة يدوياً.");
+        }
+    }
+    document.body.addEventListener('touchstart', function(){}, {passive: true});
+</script>
+</body>
+</html>
